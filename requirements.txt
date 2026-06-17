@@ -2,7 +2,7 @@
 flask
 flask-cors
 flask-socketio
-tensorflow
+tensorflow-cpu
 pillow 
 pyngrok
 numpy
