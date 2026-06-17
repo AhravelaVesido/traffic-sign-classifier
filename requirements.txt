@@ -2,7 +2,7 @@
 flask
 flask-cors
 flask-socketio
-tensorflow-cpu
+tensorflow==2.12.0
 pillow 
 pyngrok
 numpy
