@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Traffic Sign Classifier</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="logo">
+          <i class="ti ti-road-sign"></i>
+        </div>
+        <div class="header-text">
+          <h1>Traffic Sign Classifier</h1>
+          <p>Powered by Teachable Machine</p>
+        </div>
+      </div>
+      <div class="viewfinder" id="viewfinder">
+        <div class="corner tl"></div>
+        <div class="corner tr"></div>
+        <div class="corner bl"></div>
+        <div class="corner br"></div>
+        <i class="ti ti-camera"></i>
+        <p>Point a traffic sign</p>
+      </div>
+
+      <!--Button-->
+      <div class="actions">
+        <button class="btn-primary" id="camera-btn">
+          <i class="ti ti-camera"></i>
+          Open the camera
+        </button>
+        <button class="btn" id="upload-btn">
+          <i class="ti ti-upload"></i>
+          Upload a photo
+        </button>
+      </div>
+
+      <!-- Hidden file input, appears once triggered by upload a photo-->
+      <input type="file" id="file-input" accept="image/*" hidden />
+
+      <!--Result, hidden until  a sign is classified-->
+      <div class="result-card" id="result-card" hidden>
+        <div class="result-top">
+          <div class="sign-badge">
+            <i class="ti ti-road-sign"></i>
+          </div>
+          <div>
+            <p class="result-label" id="result-label">-</p>
+            <p class="result-conf" id="result-conf">-</p>
+          </div>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label" id="bar-label">-</span>
+          <div class="bar-track">
+            <div class="bar-fill" id="bar-fill"></div>
+          </div>
+          <span class="bar-percent" id="bar-percent"></span>
+        </div>
+      </div>
+
+      <!--LED indicator in Wokwi-->
+      <div class="led-row" id="led-row" hidden>
+        <div class="led" id="led-r"></div>
+        <div class="led" id="led-g"></div>
+        <div class="led" id="led-b"></div>
+        <span class="led-text" id="led-text">Waiting...</span>
+      </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>

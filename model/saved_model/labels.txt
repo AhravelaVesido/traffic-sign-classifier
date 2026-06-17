@@ -1,0 +1,5 @@
+0 No Entry
+1 Speed Limit
+2 Stop
+3 Pedestrian Crossing
+4 Other

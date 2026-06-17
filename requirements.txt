@@ -1,0 +1,9 @@
+
+flask
+flask-cors
+flask-socketio
+tensorflow
+pillow 
+pyngrok
+numpy
+gunicorn

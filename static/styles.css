@@ -1,0 +1,287 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #f5f5f5;
+  color: #1a1a1a;
+}
+
+.container {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.logo {
+  width: 36px;
+  height: 36px;
+  background-color: #a32d2d;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.header-text h1 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.header-text p {
+  font-size: 15px;
+  color: #666;
+  margin-top: 2px;
+}
+
+.viewfinder {
+  width: 100%;
+  aspect-ratio: 4/3;
+  background-color: #e8e8e8;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 1.5rem;
+  overflow: hidden;
+}
+
+.viewfinder i {
+  font-size: 48px;
+  color: #aaa;
+}
+
+.viewfinder p {
+  font-size: 14px;
+  color: #888;
+}
+
+.corner {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border-color: #a32d2d;
+  border-style: solid;
+}
+
+.tl {
+  top: 14px;
+  left: 14px;
+  border-width: 2px 0 0 2px;
+}
+
+.tr {
+  top: 14px;
+  right: 14px;
+  border-width: 2px 2px 0 0;
+}
+
+.bl {
+  bottom: 14px;
+  left: 14px;
+  border-width: 0 0 2px 2px;
+}
+
+.br {
+  bottom: 14px;
+  right: 14px;
+  border-width: 0 2px 2px 0;
+}
+
+.actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0 10px 0;
+}
+
+.btn-primary {
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: none;
+  background-color: #a32d2d;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-right: 10px;
+  transition: background-color 0.15s;
+}
+
+.btn-primary:active {
+  background-color: #a15050;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: 1px solid #a32d2d;
+  background-color: white;
+  color: #a32d2d;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+  font-size: 14px;
+  transition:
+    background-color 0.15s,
+    color 0.15s;
+}
+
+.btn:active {
+  background-color: #a32d2d;
+  color: white;
+}
+
+.result-card {
+  margin-top: 1 rem;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+}
+
+.result-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.sign-badge {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  background: #fcebeb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #a32d2d;
+  font-size: 22px;
+}
+
+.result-label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.result-conf {
+  font-size: 13px;
+  color: #666;
+  margin-top: 2px;
+}
+
+.bar-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bar-label {
+  font-size: 13px;
+  color: #666;
+  width: 130px;
+}
+
+.bar-track {
+  flex: 1;
+  height: 6px;
+  border-radius: 3px;
+  background: #eee;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  background: #a32d2d;
+  width: 0%;
+  transition: width 0.5s ease;
+}
+
+.bar-percent {
+  font-size: 13px;
+  color: #666;
+  width: 36px;
+  text-align: right;
+}
+
+/* LED row */
+.led-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 1rem;
+  padding: 10px 14px;
+  background: #f0f0f0;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.led {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #333;
+  border: 1.5px solid rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+}
+
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .logo {
+    margin-bottom: 8px;
+  }
+
+  .viewfinder {
+    aspect-ratio: 1/1; /* square on phones */
+  }
+
+  .actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn-primary, .btn {
+    width: 100%;   /* buttons full width on mobile */
+    justify-content: center;
+  }
+
+  .result-card, .led-row {
+    padding: 0.75rem;
+  }
+
+  .result-label {
+    font-size: 14px;
+  }
+
+  .result-conf, .bar-label, .bar-percent {
+    font-size: 12px;
+  }
+}

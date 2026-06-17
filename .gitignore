@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.swp
+
+# Virtual environments
+venv/
+.env/
+
+# Model files (optional if very large)
+*.h5
+*.pb
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
