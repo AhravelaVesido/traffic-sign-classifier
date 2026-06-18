@@ -59,7 +59,13 @@ def index():
 
 @app.route("/latest")                                         # Route: Wokwi polls latest result
 def latest():
-    return jsonify(latest_result)                             # Return last classification result
+    try:
+        return jsonify(latest_result)                         # Return the current global result (updated in /classify)
+    except Exception:
+        return jsonify({                                      # Fallback if latest_result is missing or invalid
+            "label": "Unknown",
+            "recognized": False
+        })
 
 # NOTE: Removed ngrok and /url route since Render provides a permanent public domain
 
