@@ -65,4 +65,4 @@ def latest():
 
 if __name__ == "__main__":                                    # Run only if executed directly
     port = int(os.environ.get("PORT", 5000))                  # Render's assigned port for deployment
-    socketio.run(app, host="0.0.0.0", port=5000, debug=True)  # Run Flask with SocketIO, debug=True shows errors
+    socketio.run(app, host="0.0.0.0", port=port, debug=True)  # Run Flask with SocketIO, debug=True shows errors
