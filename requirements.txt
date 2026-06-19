@@ -4,7 +4,7 @@ flask-cors
 flask-socketio
 tflite-runtime==2.13.0
 pillow 
-numpy
+numpy<2
 gunicorn
 gevent
 gevent-websocket
