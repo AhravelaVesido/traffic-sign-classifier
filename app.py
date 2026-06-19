@@ -12,7 +12,7 @@ import time
 
 app = Flask(__name__)                                        # Create the Flask server
 CORS(app)                                                    # Allow cross-origin requests (frontend can connect)
-socketio = SocketIO(app, cors_allowed_origins="*")           # Attach WebSocket, * means any address can connect
+socketio = SocketIO(app, cors_allowed_origins="*", async_mode="gevent")  # Attach WebSocket, * means any address can connect, gevent library so python can handle many tasks at once
 
 model = tf.saved_model.load("model/saved_model/model.savedmodel")   # Load the trained TensorFlow model
 labels = open("model/labels.txt").read().splitlines()               # Read labels.txt and split into list
@@ -71,5 +71,5 @@ def latest():
 
 if __name__ == "__main__":                                    # Run only if executed directly
     port = int(os.environ.get("PORT", 5000))                  # Render's assigned port for deployment
-    app.run(host="0.0.0.0", port=port)                        # use app.run for Render
+    socketio.run(app, host="0.0.0.0", port=port)              # use socketio.run 
     

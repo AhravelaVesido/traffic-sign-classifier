@@ -9,10 +9,6 @@ __pycache__/
 venv/
 .env/
 
-# Model files (optional if very large)
-*.h5
-*.pb
-
 # OS files
 .DS_Store
 Thumbs.db
