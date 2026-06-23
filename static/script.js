@@ -66,7 +66,7 @@ async function classifyImage(file) {
     const formData = new FormData()  // This creates a container to send the image
     formData.append('image', file)   // This adds the image to the container
 
-    const response = await fetch('http://127.0.0.1:5000/classify', {
+    const response = await fetch('/classify', {
         method: 'POST',        // This sends data
         body: formData         // The image we are sending
     })
