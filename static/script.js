@@ -122,7 +122,7 @@ function updateLED(label) {
         ledR.className = 'led on-r'  // mixes color to achieve a specific one
         ledG.className = 'led on-g'
         ledB.className = 'led on-b'
-        ledText.textContent = 'Other sign detected — White LED active'
+        ledText.textContent = 'Other sign detected — Magenta LED active'
     }
 }
 
