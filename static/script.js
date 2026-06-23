@@ -120,7 +120,6 @@ function updateLED(label) {
         ledText.textContent = 'Speed Limit sign detected - Yellow LED has been activated'
     } else {
         ledR.className = 'led on-r'  // mixes color to achieve a specific one
-        ledG.className = 'led on-g'
         ledB.className = 'led on-b'
         ledText.textContent = 'Other sign detected — Magenta LED active'
     }
